@@ -1,0 +1,27 @@
+
+ext {
+    androidMinSdkVersion = 19
+    androidTargetSdkVersion = 32
+    androidCompileSdkVersion = 32
+    appVersionCode = 1
+    appVersionName = "1.0"
+
+    androidxCoreKtx = '1.8.0'
+    appcompatVersion = '1.4.2'
+    androidMaterialComponent = '1.6.1'
+    constraintLayoutVersion = '2.1.4'
+
+    junit = '4.13.2'
+    junitExt = '1.1.3'
+    espressoCore = '3.4.0'
+
+    appDependencies = [
+            coreKtx : "androidx.core:core-ktx:${androidxCoreKtx}",
+            appCompat : "androidx.appcompat:appcompat:${appcompatVersion}",
+            material : "com.google.android.material:material:${androidMaterialComponent}",
+            constraintlayout : "androidx.constraintlayout:constraintlayout:${constraintLayoutVersion}",
+            junit : "junit:junit:${junit}",
+            junitExt : "androidx.test.ext:junit:${junitExt}",
+            espressoCore : "androidx.test.espresso:espresso-core:${espressoCore}",
+    ]
+}
