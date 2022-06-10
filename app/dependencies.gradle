@@ -14,7 +14,10 @@ ext {
     legacySupport = '1.0.0'
     lifecycleLivedataKtx = '2.4.1'
     lifecycleViewModelKtx = '2.4.1'
-
+    roomDb = '2.4.2'
+    timber = '4.7.1'
+    retrofit = '2.9.0'
+    okhttpVersion = '4.9.1'
     junit = '4.13.2'
     junitExt = '1.1.3'
     espressoCore = '3.4.0'
@@ -28,6 +31,14 @@ ext {
             legacySupport :  "androidx.legacy:legacy-support-v4:${legacySupport}",
             lifecycleLivedataKtx :  "androidx.lifecycle:lifecycle-livedata-ktx:${lifecycleLivedataKtx}",
             lifecycleViewModelKtx :  "androidx.lifecycle:lifecycle-viewmodel-ktx:${lifecycleViewModelKtx}",
+            roomRuntime : "androidx.room:room-runtime:${roomDb}",
+            roomCompiler : "androidx.room:room-compiler:${roomDb}",
+            roomKtx : "androidx.room:room-ktx:${roomDb}",
+            timber : "com.jakewharton.timber:timber:${timber}",
+            retrofit : "com.squareup.retrofit2:retrofit:${retrofit}",
+            retrofitConverter : "com.squareup.retrofit2:converter-gson:${retrofit}",
+            okhttp : "com.squareup.okhttp3:okhttp:${okhttpVersion}",
+            okhttpLoggingInterceptor : "com.squareup.okhttp3:logging-interceptor:${okhttpVersion}",
             junit : "junit:junit:${junit}",
             junitExt : "androidx.test.ext:junit:${junitExt}",
             espressoCore : "androidx.test.espresso:espresso-core:${espressoCore}",

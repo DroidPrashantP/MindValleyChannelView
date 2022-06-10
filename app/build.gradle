@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -41,6 +42,19 @@ dependencies {
     implementation appDependencies.legacySupport
     implementation appDependencies.lifecycleLivedataKtx
     implementation appDependencies.lifecycleViewModelKtx
+
+    // Room Database
+    implementation appDependencies.roomRuntime
+    kapt appDependencies.roomCompiler
+    implementation appDependencies.roomKtx
+
+    //Retrofit
+    implementation appDependencies.retrofit
+    implementation appDependencies.retrofitConverter
+
+    //okhttp
+    implementation appDependencies.okhttp
+    implementation appDependencies.okhttpLoggingInterceptor
 
 
     testImplementation appDependencies.junit
