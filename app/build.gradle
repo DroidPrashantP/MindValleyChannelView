@@ -37,6 +37,10 @@ dependencies {
     implementation appDependencies.appCompat
     implementation appDependencies.material
     implementation appDependencies.constraintlayout
+    implementation appDependencies.fragmentKtx
+    implementation appDependencies.legacySupport
+    implementation appDependencies.lifecycleLivedataKtx
+    implementation appDependencies.lifecycleViewModelKtx
 
 
     testImplementation appDependencies.junit
