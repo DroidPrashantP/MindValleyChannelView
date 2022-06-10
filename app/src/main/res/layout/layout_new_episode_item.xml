@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.fragment.ChannelScreenFragment">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tb_channelScreen_newEpisodeTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:padding="@dimen/dimen_8dp"
+        android:textStyle="bold"
+        android:textColor="@color/text_secondary_color"
+        android:lineHeight="24.5px"
+        android:textSize="@dimen/dimen_20sp"
+        android:text="@string/new_episodes_label"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_channelScreen_mainList"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tb_channelScreen_newEpisodeTitle"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
