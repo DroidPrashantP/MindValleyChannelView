@@ -15,6 +15,7 @@ android {
         versionName appVersionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField 'String', 'BASE_URL', "\"https://pastebin.com/\""
     }
 
     buildTypes {
@@ -41,7 +42,6 @@ dependencies {
     implementation appDependencies.fragmentKtx
     implementation appDependencies.legacySupport
     implementation appDependencies.lifecycleLivedataKtx
-    implementation appDependencies.lifecycleViewModelKtx
 
     // Room Database
     implementation appDependencies.roomRuntime
@@ -56,6 +56,15 @@ dependencies {
     implementation appDependencies.okhttp
     implementation appDependencies.okhttpLoggingInterceptor
 
+    // Coroutines
+    implementation appDependencies.coroutines
+
+    // koin
+    implementation appDependencies.koin
+    implementation appDependencies.koinAndroid
+
+    // Timber
+    implementation appDependencies.timber
 
     testImplementation appDependencies.junit
     androidTestImplementation appDependencies.junitExt
