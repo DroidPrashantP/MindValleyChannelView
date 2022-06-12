@@ -8,6 +8,7 @@ import com.paddy.mindvalley.channel.data.model.ChannelListItem
 import com.paddy.mindvalley.channel.data.model.ChannelViewType
 import com.paddy.mindvalley.channel.databinding.LayoutChannelPageTypeItemBinding
 import com.paddy.mindvalley.channel.ui.adapter.ChannelSubSectionAdapter
+import com.paddy.mindvalley.channel.utils.WrapContentLinearLayoutManager
 
 class ChannelPageTypeAdapterViewHolder(var binding : LayoutChannelPageTypeItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
@@ -24,7 +25,7 @@ class ChannelPageTypeAdapterViewHolder(var binding : LayoutChannelPageTypeItemBi
                 }
                 ChannelViewType.CHANNEL_SECTION -> {
                     binding.rvChannelScreenMainList.apply {
-                        layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+                        layoutManager = WrapContentLinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
                         adapter =  ChannelSubSectionAdapter(context, channelListItem)
                     }
                 }

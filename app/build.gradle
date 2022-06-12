@@ -70,6 +70,12 @@ dependencies {
     // Timber
     implementation appDependencies.timber
 
+    // Timber
+    implementation appDependencies.glide
+    kapt appDependencies.glideCompiler
+
+    implementation appDependencies.swiperefreshlayout
+
     testImplementation appDependencies.junit
     androidTestImplementation appDependencies.junitExt
     androidTestImplementation appDependencies.espressoCore

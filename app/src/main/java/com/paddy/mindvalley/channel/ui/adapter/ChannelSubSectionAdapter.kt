@@ -10,12 +10,9 @@ import android.widget.LinearLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.paddy.mindvalley.channel.data.model.ChannelListItem
 import com.paddy.mindvalley.channel.data.model.ChannelViewType
-import com.paddy.mindvalley.channel.data.model.SubSectionItem
 import com.paddy.mindvalley.channel.databinding.LayoutCategorySectionIndividualItemBinding
-import com.paddy.mindvalley.channel.databinding.LayoutChannelPageTypeItemBinding
 import com.paddy.mindvalley.channel.databinding.LayoutChannelSectionItemBinding
 import com.paddy.mindvalley.channel.databinding.LayoutNewEpisodeSectionIndividualItemBinding
-import com.paddy.mindvalley.channel.ui.ChannelPageTypeAdapterViewHolder
 import com.paddy.mindvalley.channel.ui.fragment.CategoriesSectionAdapterViewHolder
 import com.paddy.mindvalley.channel.ui.fragment.ChannelSectionAdapterViewHolder
 import com.paddy.mindvalley.channel.ui.fragment.NewEpisodeAdapterViewHolder
@@ -26,7 +23,7 @@ class ChannelSubSectionAdapter(
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     companion object {
-        private const val MAX_WIDTH_PERCENTAGE = 45
+        private const val MAX_WIDTH_PERCENTAGE_SMALL = 45
         private const val NEW_EPISODE_TYPE = 1
         private const val CHANNEL_VIEW_TYPE = 2
         private const val CATEGORY_VIEW_TYPE = 3
@@ -57,8 +54,8 @@ class ChannelSubSectionAdapter(
 
         when (viewType) {
             NEW_EPISODE_TYPE -> {
-                var view  = LayoutNewEpisodeSectionIndividualItemBinding.inflate(inflater, parent, false)
-                setWidthToView(view.root, mContext, MAX_WIDTH_PERCENTAGE)
+                val view  = LayoutNewEpisodeSectionIndividualItemBinding.inflate(inflater, parent, false)
+                setWidthToView(view.root, mContext, MAX_WIDTH_PERCENTAGE_SMALL)
                 viewHolder = NewEpisodeAdapterViewHolder(view)
 
             }
@@ -77,12 +74,12 @@ class ChannelSubSectionAdapter(
             NEW_EPISODE_TYPE -> {
                 val newEpisodeAdapterViewHolder = holder as NewEpisodeAdapterViewHolder
                 var media  = channelItem?.sectionData?.data?.media?.get(position)
-                newEpisodeAdapterViewHolder.bindData(media)
+                newEpisodeAdapterViewHolder.bindData(mContext, media)
             }
             CHANNEL_VIEW_TYPE -> {
                 val channelSectionAdapterViewHolder = holder as ChannelSectionAdapterViewHolder
                 val channel  = channelItem?.sectionData?.data?.channels?.get(position)
-                channelSectionAdapterViewHolder.bindData(channel)
+                channelSectionAdapterViewHolder.bindData(mContext, channel)
             }
             CATEGORY_VIEW_TYPE -> {
                 val categoriesSectionAdapterViewHolder = holder as CategoriesSectionAdapterViewHolder
