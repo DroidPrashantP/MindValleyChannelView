@@ -4,6 +4,7 @@
     <color name="secondaryColor">#FFFFFFFF</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="header_color">#C1C1C1</color>
     <color name="text_primary_color">#FFFFFFFF</color>
     <color name="text_secondary_color">#95989D</color>
     <color name="divider_color">#3C434E</color>

@@ -4,10 +4,10 @@ import android.content.Context
 import android.os.Build
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.paddy.mindvalley.channel.data.model.Channel
 import com.paddy.mindvalley.channel.databinding.LayoutChannelSectionItemBinding
 import com.paddy.mindvalley.channel.ui.adapter.ChannelItemAdapter
+import com.paddy.mindvalley.channel.utils.ImageLoadingUtils
 
 class ChannelSectionAdapterViewHolder(var binding : LayoutChannelSectionItemBinding) : RecyclerView.ViewHolder(binding.root) {
     fun bindData(context: Context?, channel: Channel?){
@@ -19,7 +19,7 @@ class ChannelSectionAdapterViewHolder(var binding : LayoutChannelSectionItemBind
         }
 
         context?.let {
-            Glide.with(context).load(channel?.iconAsset?.thumbnailUrl).into(binding.tvChannelScreenChannelImage)
+            ImageLoadingUtils.loadImage(it, channel?.iconAsset?.thumbnailUrl, binding.tvChannelScreenChannelImage, true)
         }
 
         binding.rvChannelScreenChannelSection.apply {

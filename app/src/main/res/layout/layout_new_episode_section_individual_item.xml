@@ -5,12 +5,13 @@
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/dimen_8dp">
 
-    <androidx.appcompat.widget.AppCompatImageView
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/tb_newEpisodeSection_image"
+        style="@style/customRoundedImageView"
         android:layout_width="0dp"
-        android:layout_height="@dimen/dimen_200dp"
+        android:layout_height="@dimen/dimen_250dp"
         android:padding="@dimen/dimen_8dp"
-        android:background="@drawable/round_image_bg"
+        android:adjustViewBounds="true"
         android:src="@drawable/ic_launcher_foreground"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

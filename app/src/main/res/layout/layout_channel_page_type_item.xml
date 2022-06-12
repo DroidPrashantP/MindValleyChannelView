@@ -28,8 +28,9 @@
         app:layout_constraintTop_toBottomOf="@+id/tb_channelScreen_newEpisodeTitle" />
 
     <View
+        android:id="@+id/view_channelScreen_divider"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dimen_1dp"
+        android:layout_height="@dimen/dimen_pt_5dp"
         android:layout_margin="@dimen/dimen_8dp"
         android:background="@color/text_secondary_color"
         app:layout_constraintEnd_toEndOf="parent"
