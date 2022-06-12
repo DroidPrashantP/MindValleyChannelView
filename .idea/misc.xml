@@ -9,9 +9,13 @@
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1655" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.21822916666666667" />
         <entry key="app/src/main/res/layout/channel_screen_fragment.xml" value="0.21822916666666667" />
-        <entry key="app/src/main/res/layout/layout_category_section_individual_item.xml" value="0.45" />
+        <entry key="app/src/main/res/layout/layout_category_section_individual_item.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/layout_category_section_item.xml" value="0.23229166666666667" />
         <entry key="app/src/main/res/layout/layout_category_section_item_row.xml" value="0.23229166666666667" />
+        <entry key="app/src/main/res/layout/layout_channel_page_type_item.xml" value="0.23229166666666667" />
+        <entry key="app/src/main/res/layout/layout_channel_section_item.xml" value="0.23229166666666667" />
         <entry key="app/src/main/res/layout/layout_channel_section_item_row.xml" value="0.23229166666666667" />
+        <entry key="app/src/main/res/layout/layout_new_episode_item.xml" value="0.23229166666666667" />
         <entry key="app/src/main/res/layout/layout_new_episode_item_row.xml" value="0.23229166666666667" />
         <entry key="app/src/main/res/layout/layout_new_episode_section_individual_item.xml" value="0.23229166666666667" />
       </map>

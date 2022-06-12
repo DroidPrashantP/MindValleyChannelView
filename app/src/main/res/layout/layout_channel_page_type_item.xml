@@ -16,7 +16,6 @@
         android:padding="@dimen/dimen_8dp"
         android:textStyle="bold"
         android:textColor="@color/text_secondary_color"
-        android:lineHeight="24.5px"
         android:textSize="@dimen/dimen_20sp"
         android:text="@string/new_episodes_label"/>
 

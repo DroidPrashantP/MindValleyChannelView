@@ -18,6 +18,10 @@ android {
         buildConfigField 'String', 'BASE_URL', "\"https://pastebin.com/\""
     }
 
+    buildFeatures {
+        viewBinding true
+    }
+
     buildTypes {
         release {
             minifyEnabled false

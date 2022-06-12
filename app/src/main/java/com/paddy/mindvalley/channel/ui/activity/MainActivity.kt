@@ -21,10 +21,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         initFragment()
         mContext = this
-
-        mContext?.let { ctx ->
-            mChannelScreenViewModel.fetchChannelScreenData()
-        }
     }
 
     private fun initFragment() {

@@ -1,50 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/dimen_8dp">
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/tb_newEpisodeSection_image"
         android:layout_width="0dp"
         android:layout_height="@dimen/dimen_200dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         android:padding="@dimen/dimen_8dp"
-        android:textStyle="bold"
         android:src="@drawable/ic_launcher_foreground"
+        android:text="@string/new_episodes_label"
         android:textColor="@color/text_secondary_color"
-        android:lineHeight="24.5px"
         android:textSize="@dimen/dimen_20sp"
-        android:text="@string/new_episodes_label"/>
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tb_newEpisodeSection_label"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tb_newEpisodeSection_image"
         android:padding="@dimen/dimen_8dp"
-        android:textStyle="bold"
         android:textColor="@color/text_primary_color"
         android:textSize="@dimen/dimen_20sp"
-        android:text="@string/new_episodes_label"/>
+        android:textStyle="bold"
+        android:gravity="start"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tb_newEpisodeSection_image" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tb_newEpisodeSection_description"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tb_newEpisodeSection_label"
+        android:maxLines="2"
         android:padding="@dimen/dimen_8dp"
-        android:textStyle="bold"
         android:textColor="@color/text_secondary_color"
-        android:lineHeight="24.5px"
         android:textSize="@dimen/dimen_20sp"
-        android:text="@string/new_episodes_label"/>
+        android:textStyle="bold"
+        android:gravity="start"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tb_newEpisodeSection_label" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
