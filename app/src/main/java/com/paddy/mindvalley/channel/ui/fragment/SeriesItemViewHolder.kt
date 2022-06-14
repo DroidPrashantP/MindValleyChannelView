@@ -1,6 +1,7 @@
 package com.paddy.mindvalley.channel.ui.fragment
 
 import android.content.Context
+import android.os.Build
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.shape.CornerFamily
@@ -13,10 +14,13 @@ class SeriesItemViewHolder(var binding : LayoutChannelCourseSectionIndividualIte
     fun bindData(context: Context?, series: Series?){
         binding.tbCourseSectionLabel.text = series?.title
         context?.let {
-            binding.tbCourseSectionImage.shapeAppearanceModel = binding.tbCourseSectionImage.shapeAppearanceModel
-                .toBuilder()
-                .setAllCorners(CornerFamily.ROUNDED, 16.0f)
-                .build()
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                binding.tbCourseSectionImage.clipToOutline = true
+                binding.tbCourseSectionImage.shapeAppearanceModel = binding.tbCourseSectionImage.shapeAppearanceModel
+                    .toBuilder()
+                    .setAllCorners(CornerFamily.ROUNDED, 16.0f)
+                    .build()
+            }
 
             ImageLoadingUtils.loadImage(it, series?.coverAsset?.url, binding.tbCourseSectionImage, false)
             binding.tbCourseSectionImage.scaleType = ImageView.ScaleType.FIT_XY

@@ -20,16 +20,28 @@ object LayoutUtils {
         itemView.layoutParams = layoutParams
     }
 
-    fun setWidthAndHeightToView(itemView: View, context: Context?, widthPercentage: Int, heightPercentage: Int) {
+    fun setWidthAndHeightToView(itemView: View, context: Context?, widthPercentage: Int) {
         val wm = context?.getSystemService(Context.WINDOW_SERVICE) as WindowManager
         val width = getWidth(wm, widthPercentage)
-        val height = getHeight(wm, heightPercentage)
+        val height = (width * 3) / 2  // 2/3 image ration
         val layoutParams = LinearLayout.LayoutParams(
             width,
             height
         )
         itemView.layoutParams = layoutParams
     }
+
+    fun setWidthAndHeightToSeriesView(itemView: View, context: Context?, widthPercentage: Int) {
+        val wm = context?.getSystemService(Context.WINDOW_SERVICE) as WindowManager
+        val width = getWidth(wm, widthPercentage)
+        val height = (width * 9) / 16  // 9/16 series image ration
+        val layoutParams = LinearLayout.LayoutParams(
+            width,
+            height
+        )
+        itemView.layoutParams = layoutParams
+    }
+
 
     private fun getWidth(wm: WindowManager, widthPercentage: Int): Int {
         val display = wm.defaultDisplay

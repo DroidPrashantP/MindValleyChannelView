@@ -28,13 +28,13 @@ class ChannelItemAdapter(
         mMediaList = mChannel?.latestMedia as MutableList<LatestMedia>?
         mSeriesList = if(mChannel?.series.isListNotEmpty()) mChannel?.series as MutableList<Series>? else mutableListOf()
         mIsSeriesDataAvailable = mChannel?.series.isListNotEmpty()
-        mIsSeriesDataAvailable = mChannel?.series.isListNotEmpty()
         isMoreThanOneItem = mChannel?.series?.size!! > 1
     }
 
     companion object {
         private const val VIEW_WIDTH_PERCENTAGE_SMALL = 45
         private const val VIEW_WIDTH_PERCENTAGE_LONG = 85
+        private const val FULL_VIEW_WIDTH = 95
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
@@ -42,12 +42,10 @@ class ChannelItemAdapter(
         val view = LayoutChannelCourseSectionIndividualItemBinding.inflate(inflater, parent, false)
 
         return  if (mIsSeriesDataAvailable.isNotNullAndTrue()) {
-            if(isMoreThanOneItem) {
-                LayoutUtils.setWidthToView(view.root, mContext, VIEW_WIDTH_PERCENTAGE_SMALL)
-            }
+            LayoutUtils.setWidthAndHeightToSeriesView(view.root, mContext, if(isMoreThanOneItem)  VIEW_WIDTH_PERCENTAGE_LONG  else FULL_VIEW_WIDTH)
             SeriesItemViewHolder(view)
         } else {
-            LayoutUtils.setWidthToView(view.root, mContext, VIEW_WIDTH_PERCENTAGE_LONG)
+            LayoutUtils.setWidthAndHeightToView(view.root, mContext, VIEW_WIDTH_PERCENTAGE_SMALL)
             CourseSectionAdapterViewHolder(view)
         }
     }

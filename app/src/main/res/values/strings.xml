@@ -3,4 +3,8 @@
     <string name="new_episodes_label">New Episodes</string>
     <string name="browse_by_categories_label">Browse by categories</string>
     <string name="channels">Channels</string>
+    <string name="no_internet_connection_desc">Slow or no internet connection \n Please check your internet connection</string>
+    <string name="whoops">Whoops</string>
+    <string name="append_episodes">%s Episodes</string>
+    <string name="append_series">%s Series</string>
 </resources>

@@ -70,7 +70,7 @@ class ChannelSubSectionAdapter(
         when (holder.itemViewType) {
             NEW_EPISODE_TYPE -> {
                 val newEpisodeAdapterViewHolder = holder as NewEpisodeAdapterViewHolder
-                var media  = channelItem?.sectionData?.data?.media?.get(position)
+                val media  = channelItem?.sectionData?.data?.media?.get(position)
                 newEpisodeAdapterViewHolder.bindData(mContext, media)
             }
             CHANNEL_VIEW_TYPE -> {
