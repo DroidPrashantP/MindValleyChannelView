@@ -75,6 +75,12 @@ dependencies {
     kapt appDependencies.glideCompiler
 
     implementation appDependencies.swiperefreshlayout
+    implementation appDependencies.shimmerView
+
+    // Room Database
+    implementation appDependencies.roomRuntime
+    kapt appDependencies.roomCompiler
+    implementation appDependencies.roomKtx
 
     testImplementation appDependencies.junit
     androidTestImplementation appDependencies.junitExt

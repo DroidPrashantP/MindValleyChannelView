@@ -25,6 +25,7 @@ ext {
     espressoCore = '3.4.0'
     glideVersion = '4.13.0'
     swiperefreshlayoutVersion = '1.1.0'
+    shimmerViewVersion = '0.5.0'
 
     appDependencies = [
             coreKtx : "androidx.core:core-ktx:${androidxCoreKtx}",
@@ -48,6 +49,7 @@ ext {
             glide : "com.github.bumptech.glide:glide:${glideVersion}",
             glideCompiler : "com.github.bumptech.glide:compiler:${glideVersion}",
             swiperefreshlayout :  "androidx.swiperefreshlayout:swiperefreshlayout:${swiperefreshlayoutVersion}",
+            shimmerView : "com.facebook.shimmer:shimmer:${shimmerViewVersion}",
             junit : "junit:junit:${junit}",
             junitExt : "androidx.test.ext:junit:${junitExt}",
             espressoCore : "androidx.test.espresso:espresso-core:${espressoCore}",

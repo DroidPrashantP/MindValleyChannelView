@@ -12,7 +12,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.paddy.mindvalley.channel.R
 import com.paddy.mindvalley.channel.databinding.ChannelScreenFragmentBinding
 import com.paddy.mindvalley.channel.ui.adapter.ChannelPageMainAdapter
+import com.paddy.mindvalley.channel.utils.gone
 import com.paddy.mindvalley.channel.utils.isNotNullAndTrue
+import com.paddy.mindvalley.channel.utils.show
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 
@@ -41,7 +43,6 @@ class ChannelScreenFragment : Fragment(R.layout.channel_screen_fragment) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initializeTheRv()
-
         swipeToRefreshLayoutBinding()
         loadData()
     }
@@ -63,13 +64,22 @@ class ChannelScreenFragment : Fragment(R.layout.channel_screen_fragment) {
     }
 
     private fun loadData() {
-        lifecycleScope.launchWhenResumed {
-            mContext?.let { ctx ->
-                mChannelScreenViewModel.fetchChannelScreenData().observe(viewLifecycleOwner) { result ->
-                    mChannelPageMainAdapter?.addCollectionItems(result)
+        mDataBinding?.let { view ->
+            view.shimmerViewContainer.show()
+            view.rvChannelScreenMainList.gone()
+            view.shimmerViewContainer.startShimmer()
+            lifecycleScope.launchWhenResumed {
+                mContext?.let {
+                    mChannelScreenViewModel.fetchChannelScreenData().observe(viewLifecycleOwner) { result ->
+                        mDataBinding?.shimmerViewContainer?.stopShimmer()
+                        mDataBinding?.shimmerViewContainer?.visibility = View.GONE
+                        mDataBinding?.rvChannelScreenMainList?.visibility = View.VISIBLE
+                        mChannelPageMainAdapter?.addCollectionItems(result)
+                    }
                 }
             }
         }
+
     }
 
     private fun initializeTheRv(){

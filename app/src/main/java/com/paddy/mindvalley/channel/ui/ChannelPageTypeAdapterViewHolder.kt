@@ -6,35 +6,39 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.paddy.mindvalley.channel.data.model.ChannelListItem
 import com.paddy.mindvalley.channel.data.model.ChannelViewType
-import com.paddy.mindvalley.channel.databinding.LayoutChannelPageTypeItemBinding
+import com.paddy.mindvalley.channel.databinding.LayoutChannelSectionTypeItemBinding
 import com.paddy.mindvalley.channel.ui.adapter.ChannelSubSectionAdapter
-import com.paddy.mindvalley.channel.utils.WrapContentLinearLayoutManager
+import com.paddy.mindvalley.channel.utils.gone
+import com.paddy.mindvalley.channel.utils.show
 
-class ChannelPageTypeAdapterViewHolder(var binding : LayoutChannelPageTypeItemBinding) : RecyclerView.ViewHolder(binding.root) {
+class ChannelPageTypeAdapterViewHolder(var binding: LayoutChannelSectionTypeItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
-    fun bindData(context: Context?, channelListItem: ChannelListItem?){
+    fun bindData(context: Context?, channelListItem: ChannelListItem?) {
         channelListItem?.let {
-            binding.tbChannelScreenNewEpisodeTitle.text = it.sectionTitle
+            if(it.sectionTitle.isNullOrBlank()){
+                binding.tbChannelScreenNewEpisodeTitle.gone()
+            } else {
+                binding.tbChannelScreenNewEpisodeTitle.show()
+                binding.tbChannelScreenNewEpisodeTitle.text = it.sectionTitle
+            }
 
-            when (it.channelViewType) {
-                ChannelViewType.NEW_EPISODE -> {
-                    binding.rvChannelScreenMainList.apply {
-                        layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-                        adapter =  ChannelSubSectionAdapter(context, channelListItem)
+
+            val llm = when (it.channelViewType) {
+                    ChannelViewType.NEW_EPISODE -> {
+                        LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+                    }
+                    ChannelViewType.CHANNEL_SECTION -> {
+                        LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+
+                    }
+                    ChannelViewType.CATEGORY_SECTION -> {
+                        GridLayoutManager(context, 2, LinearLayoutManager.VERTICAL, false)
                     }
                 }
-                ChannelViewType.CHANNEL_SECTION -> {
-                    binding.rvChannelScreenMainList.apply {
-                        layoutManager = WrapContentLinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-                        adapter =  ChannelSubSectionAdapter(context, channelListItem)
-                    }
-                }
-                ChannelViewType.CATEGORY_SECTION -> {
-                    binding.rvChannelScreenMainList.apply {
-                        layoutManager = GridLayoutManager(context, 2, LinearLayoutManager.VERTICAL, false)
-                        adapter =  ChannelSubSectionAdapter(context, channelListItem)
-                    }
-                }
+
+            binding.rvChannelScreenMainList.apply {
+                layoutManager = llm
+                adapter = ChannelSubSectionAdapter(context, channelListItem)
             }
         }
 

@@ -5,7 +5,7 @@
     android:layout_height="wrap_content">
 
     <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/tb_newEpisodeSection_image"
+        android:id="@+id/tb_courseSection_image"
         style="@style/customRoundedImageView"
         android:layout_width="0dp"
         android:layout_height="@dimen/dimen_230dp"
@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tb_newEpisodeSection_label"
+        android:id="@+id/tb_courseSection_label"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:gravity="start"
@@ -29,21 +29,6 @@
         android:text="The Cure For Loneliness"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tb_newEpisodeSection_image" />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tb_newEpisodeSection_description"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:gravity="start"
-        android:maxLines="2"
-        android:padding="@dimen/dimen_8dp"
-        android:text="The Cure For Loneliness"
-        android:textColor="@color/text_secondary_color"
-        android:textSize="@dimen/dimen_13sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tb_newEpisodeSection_label" />
+        app:layout_constraintTop_toBottomOf="@+id/tb_courseSection_image" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -23,7 +23,6 @@ object ImageLoadingUtils {
         circularTransformation: Boolean
     ) {
         try {
-
             if (appCompatImageView != null && ctx != null && imageUrl!= null) {
                 Glide.with(ctx).load(imageUrl)
                     .apply(if (circularTransformation) circularOptions else options)
@@ -37,7 +36,7 @@ object ImageLoadingUtils {
                             if (e != null) {
                                 val exceptionList = e.rootCauses
                                 if (exceptionList.size > 0) {
-                                    val errorMsg = exceptionList[0].message
+                                    Timber.e("Exception caught in $exceptionList[0].message")
                                 }
                             }
                             return false
@@ -56,7 +55,7 @@ object ImageLoadingUtils {
                     .into(appCompatImageView)
             }
         } catch (e: Throwable) {
-            Timber.e("Exception caught while loading image ==>> " + e.message)
+            Timber.e("Exception caught while loading image ==>> ${e.message}")
         }
     }
 

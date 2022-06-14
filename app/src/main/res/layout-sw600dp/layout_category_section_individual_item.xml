@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.AppCompatTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/tv_categorySection_label"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/dimen_16dp"
+    android:layout_margin="@dimen/dimen_8dp"
+    android:text="@string/browse_by_categories_label"
+    android:background="@drawable/category_label_bg"
+    android:textColor="@color/text_primary_color"
+    android:textSize="@dimen/dimen_18sp"
+    android:gravity="center"
+    android:textStyle="bold"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+

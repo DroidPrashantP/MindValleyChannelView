@@ -1,6 +1,7 @@
 package com.paddy.mindvalley.channel
 
 import android.app.Application
+import android.content.Context
 import com.paddy.mindvalley.channel.domain.appModule
 import com.paddy.mindvalley.channel.domain.repModule
 import com.paddy.mindvalley.channel.domain.viewModelModule
@@ -15,6 +16,10 @@ class MindValleyApplication : Application() {
             androidContext(this@MindValleyApplication)
             modules(listOf(appModule, repModule, viewModelModule))
         }
+    }
+
+    override fun attachBaseContext(base: Context) {
+        super.attachBaseContext(base)
     }
 
 }

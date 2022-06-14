@@ -1,12 +1,8 @@
 package com.paddy.mindvalley.channel.ui.adapter
 
 import android.content.Context
-import android.graphics.Point
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.view.WindowManager
-import android.widget.LinearLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.paddy.mindvalley.channel.data.model.ChannelListItem
 import com.paddy.mindvalley.channel.data.model.ChannelViewType
@@ -16,6 +12,7 @@ import com.paddy.mindvalley.channel.databinding.LayoutNewEpisodeSectionIndividua
 import com.paddy.mindvalley.channel.ui.fragment.CategoriesSectionAdapterViewHolder
 import com.paddy.mindvalley.channel.ui.fragment.ChannelSectionAdapterViewHolder
 import com.paddy.mindvalley.channel.ui.fragment.NewEpisodeAdapterViewHolder
+import com.paddy.mindvalley.channel.utils.LayoutUtils
 
 class ChannelSubSectionAdapter(
     private var mContext: Context?,
@@ -55,7 +52,7 @@ class ChannelSubSectionAdapter(
         when (viewType) {
             NEW_EPISODE_TYPE -> {
                 val view  = LayoutNewEpisodeSectionIndividualItemBinding.inflate(inflater, parent, false)
-                setWidthToView(view.root, mContext, MAX_WIDTH_PERCENTAGE_SMALL)
+                LayoutUtils.setWidthToView(view.root, mContext, MAX_WIDTH_PERCENTAGE_SMALL)
                 viewHolder = NewEpisodeAdapterViewHolder(view)
 
             }
@@ -104,21 +101,6 @@ class ChannelSubSectionAdapter(
                0
             }
         }
-    }
-
-    private fun setWidthToView(itemView: View, context: Context?, widthPercentage: Int) {
-        val wm = context?.getSystemService(Context.WINDOW_SERVICE) as WindowManager
-        val width = getWidth(wm, widthPercentage)
-        val layoutParams = LinearLayout.LayoutParams(width,
-            ViewGroup.LayoutParams.MATCH_PARENT)
-        itemView.layoutParams = layoutParams
-    }
-
-    private fun getWidth(wm: WindowManager, widthPercentage: Int): Int {
-        val display = wm.defaultDisplay
-        val size = Point()
-        display.getSize(size)
-        return size.x * widthPercentage / 100
     }
 
 }
