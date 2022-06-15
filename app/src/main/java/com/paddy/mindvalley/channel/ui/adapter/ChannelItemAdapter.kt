@@ -42,7 +42,7 @@ class ChannelItemAdapter(
         val view = LayoutChannelCourseSectionIndividualItemBinding.inflate(inflater, parent, false)
 
         return  if (mIsSeriesDataAvailable.isNotNullAndTrue()) {
-            LayoutUtils.setWidthAndHeightToSeriesView(view.root, mContext, if(isMoreThanOneItem)  VIEW_WIDTH_PERCENTAGE_LONG  else FULL_VIEW_WIDTH)
+            LayoutUtils.setWidthToView(view.root, mContext, if(isMoreThanOneItem)  VIEW_WIDTH_PERCENTAGE_LONG  else FULL_VIEW_WIDTH)
             SeriesItemViewHolder(view)
         } else {
             LayoutUtils.setWidthAndHeightToView(view.root, mContext, VIEW_WIDTH_PERCENTAGE_SMALL)
