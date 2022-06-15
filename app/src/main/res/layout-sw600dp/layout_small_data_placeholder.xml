@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    style="@style/MatchParentWrapContent"
     android:layout_margin="@dimen/dimen_4dp"
     android:filterTouchesWhenObscured="true">
 
@@ -17,44 +16,38 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="@dimen/dimen_0dp"
-        android:layout_height="wrap_content"
+        style="@style/ConstraintWrapStyle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_sectionTitle">
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline_one"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            style="@style/ConstraintWrapStyle"
             android:orientation="vertical"
             app:layout_constraintGuide_percent="0.45" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline_two"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            style="@style/ConstraintWrapStyle"
             android:orientation="vertical"
             app:layout_constraintGuide_percent="0.9" />
 
         <include
             layout="@layout/layout_small_placeholder_inner_content"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            style="@style/ConstraintWrapStyle"
             app:layout_constraintEnd_toEndOf="@+id/guideline_one"
             app:layout_constraintStart_toStartOf="parent" />
 
         <include
             layout="@layout/layout_small_placeholder_inner_content"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            style="@style/ConstraintWrapStyle"
             app:layout_constraintEnd_toEndOf="@+id/guideline_two"
             app:layout_constraintStart_toStartOf="@+id/guideline_one" />
 
         <include
             layout="@layout/layout_small_placeholder_inner_content"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            style="@style/ConstraintWrapStyle"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline_two" />
 

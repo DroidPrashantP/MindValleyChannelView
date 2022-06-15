@@ -105,6 +105,13 @@ dependencies {
     implementation appDependencies.roomKtx
 
     testImplementation appDependencies.junit
+    debugImplementation appDependencies.fragmentTesting
+    androidTestImplementation appDependencies.testRunner
+    androidTestImplementation appDependencies.testRules
     androidTestImplementation appDependencies.junitExt
     androidTestImplementation appDependencies.espressoCore
+    androidTestImplementation appDependencies.espressoContrib
+
+    testImplementation appDependencies.truthLibrary
+    testImplementation appDependencies.mockinto
 }

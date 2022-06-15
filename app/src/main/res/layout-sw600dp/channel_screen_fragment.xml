@@ -3,18 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/swipeToRefreshLayout"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    style="@style/MatchParent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        style="@style/MatchParent"
         tools:context=".ui.fragment.ChannelScreenFragment">
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_channelScreen_title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/ConstraintWrapStyle"
             android:padding="@dimen/dimen_16dp"
             android:text="@string/channels"
             android:textColor="@color/header_color"
@@ -26,8 +23,7 @@
 
         <com.facebook.shimmer.ShimmerFrameLayout
             android:id="@+id/shimmer_view_container"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
+            style="@style/ConstraintMatchStyle"
             android:layout_gravity="center"
             android:layout_marginTop="15dp"
             android:orientation="vertical"
@@ -38,8 +34,7 @@
             app:layout_constraintTop_toBottomOf="@+id/tv_channelScreen_title">
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                style="@style/MatchParentWrapContent"
                 android:orientation="vertical">
 
                 <include layout="@layout/layout_small_data_placeholder" />
@@ -62,8 +57,7 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_channelScreen_mainList"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
+            style="@style/ConstraintMatchStyle"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -72,12 +66,13 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cl_emptyScreen_container"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            style="@style/ConstraintMatchStyle"
+            android:visibility="gone">
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tv_emptyScreen_title"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                style="@style/ConstraintWrapStyle"
                 android:gravity="center"
                 android:maxLines="2"
                 android:padding="@dimen/dimen_8dp"
@@ -92,8 +87,7 @@
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tv_emptyScreen_description"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                style="@style/ConstraintWrapStyle"
                 android:gravity="center"
                 android:maxLines="2"
                 android:padding="@dimen/dimen_8dp"

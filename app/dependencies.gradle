@@ -26,6 +26,10 @@ ext {
     glideVersion = '4.13.0'
     swiperefreshlayoutVersion = '1.1.0'
     shimmerViewVersion = '0.5.0'
+    truthVersion = '1.1.3'
+    mockVerion = '1.12.3'
+    fragmentTestingVersion = '1.4.1'
+    testRunnerVersion = '1.4.0'
 
     appDependencies = [
             coreKtx : "androidx.core:core-ktx:${androidxCoreKtx}",
@@ -50,8 +54,14 @@ ext {
             glideCompiler : "com.github.bumptech.glide:compiler:${glideVersion}",
             swiperefreshlayout :  "androidx.swiperefreshlayout:swiperefreshlayout:${swiperefreshlayoutVersion}",
             shimmerView : "com.facebook.shimmer:shimmer:${shimmerViewVersion}",
+            fragmentTesting : "androidx.fragment:fragment-testing:${fragmentTestingVersion}",
             junit : "junit:junit:${junit}",
             junitExt : "androidx.test.ext:junit:${junitExt}",
+            testRunner : "androidx.test:runner:${testRunnerVersion}",
+            testRules : "androidx.test:rules:${testRunnerVersion}",
             espressoCore : "androidx.test.espresso:espresso-core:${espressoCore}",
+            espressoContrib : "androidx.test.espresso:espresso-contrib:${espressoCore}",
+            truthLibrary : "com.google.truth:truth:${truthVersion}",
+            mockinto : "io.mockk:mockk:${mockVerion}"
     ]
 }

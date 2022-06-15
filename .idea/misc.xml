@@ -16,7 +16,15 @@
         <entry key="app/src/main/res/drawable/shimmer_bg.xml" value="0.1655" />
         <entry key="app/src/main/res/layout-sw600dp/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout-sw600dp/channel_screen_fragment.xml" value="0.17421875" />
+        <entry key="app/src/main/res/layout-sw600dp/layout_category_section_individual_item.xml" value="0.17421875" />
+        <entry key="app/src/main/res/layout-sw600dp/layout_channel_course_section_individual_item.xml" value="0.17421875" />
+        <entry key="app/src/main/res/layout-sw600dp/layout_channel_section_item.xml" value="0.17421875" />
+        <entry key="app/src/main/res/layout-sw600dp/layout_channel_section_type_item.xml" value="0.17421875" />
+        <entry key="app/src/main/res/layout-sw600dp/layout_data_placeholder_with_header.xml" value="0.17421875" />
         <entry key="app/src/main/res/layout-sw600dp/layout_empty_view.xml" value="0.17421875" />
+        <entry key="app/src/main/res/layout-sw600dp/layout_new_episode_section_individual_item.xml" value="0.17421875" />
+        <entry key="app/src/main/res/layout-sw600dp/layout_small_data_placeholder.xml" value="0.17421875" />
+        <entry key="app/src/main/res/layout-sw600dp/layout_small_placeholder_inner_content.xml" value="0.17421875" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.21822916666666667" />
         <entry key="app/src/main/res/layout/channel_screen_fragment.xml" value="0.21822916666666667" />
         <entry key="app/src/main/res/layout/data_placeholder_layout.xml" value="0.23229166666666667" />
@@ -27,6 +35,7 @@
         <entry key="app/src/main/res/layout/layout_channel_page_type_item.xml" value="0.23229166666666667" />
         <entry key="app/src/main/res/layout/layout_channel_section_item.xml" value="0.18237704918032788" />
         <entry key="app/src/main/res/layout/layout_channel_section_item_row.xml" value="0.23229166666666667" />
+        <entry key="app/src/main/res/layout/layout_channel_section_type_item.xml" value="0.23229166666666667" />
         <entry key="app/src/main/res/layout/layout_data_placeholder_with_header.xml" value="0.23229166666666667" />
         <entry key="app/src/main/res/layout/layout_empty_view.xml" value="0.23229166666666667" />
         <entry key="app/src/main/res/layout/layout_new_episode_item.xml" value="0.23229166666666667" />
