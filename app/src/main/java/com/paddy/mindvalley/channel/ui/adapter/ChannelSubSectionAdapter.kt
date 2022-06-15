@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.paddy.mindvalley.channel.data.model.ChannelListItem
-import com.paddy.mindvalley.channel.data.model.ChannelViewType
+import com.paddy.mindvalley.channel.data.model.ChannelSectionViewType
 import com.paddy.mindvalley.channel.databinding.LayoutCategorySectionIndividualItemBinding
 import com.paddy.mindvalley.channel.databinding.LayoutChannelSectionItemBinding
 import com.paddy.mindvalley.channel.databinding.LayoutNewEpisodeSectionIndividualItemBinding
@@ -29,14 +29,14 @@ class ChannelSubSectionAdapter(
 
 
     override fun getItemViewType(position: Int): Int {
-        return when (channelItem?.channelViewType) {
-            ChannelViewType.NEW_EPISODE -> {
+        return when (channelItem?.channelSectionViewType) {
+            ChannelSectionViewType.NEW_EPISODE -> {
                 NEW_EPISODE_TYPE
             }
-            ChannelViewType.CHANNEL_SECTION -> {
+            ChannelSectionViewType.CHANNEL_SECTION -> {
                 CHANNEL_VIEW_TYPE
             }
-            ChannelViewType.CATEGORY_SECTION -> {
+            ChannelSectionViewType.CATEGORY_SECTION -> {
                 CATEGORY_VIEW_TYPE
             }
             else -> {
@@ -87,14 +87,14 @@ class ChannelSubSectionAdapter(
     }
 
     override fun getItemCount(): Int {
-        return when (channelItem?.channelViewType) {
-            ChannelViewType.NEW_EPISODE -> {
+        return when (channelItem?.channelSectionViewType) {
+            ChannelSectionViewType.NEW_EPISODE -> {
                 channelItem?.sectionData?.data?.media?.size ?: 0
             }
-            ChannelViewType.CHANNEL_SECTION -> {
+            ChannelSectionViewType.CHANNEL_SECTION -> {
                 channelItem?.sectionData?.data?.channels?.size ?: 0
             }
-            ChannelViewType.CATEGORY_SECTION -> {
+            ChannelSectionViewType.CATEGORY_SECTION -> {
                 channelItem?.sectionData?.data?.categories?.size ?: 0
             }
             else -> {

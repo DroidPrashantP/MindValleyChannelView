@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.paddy.mindvalley.channel.R
 import com.paddy.mindvalley.channel.data.model.Channel
 import com.paddy.mindvalley.channel.databinding.LayoutChannelSectionItemBinding
-import com.paddy.mindvalley.channel.ui.adapter.ChannelItemAdapter
+import com.paddy.mindvalley.channel.ui.adapter.CourseOrSeriesItemAdapter
 import com.paddy.mindvalley.channel.utils.ImageLoadingUtils
 import com.paddy.mindvalley.channel.utils.isListNotEmpty
 
@@ -29,7 +29,7 @@ class ChannelSectionAdapterViewHolder(var binding: LayoutChannelSectionItemBindi
 
             binding.rvChannelScreenChannelSection.apply {
                 layoutManager = LinearLayoutManager(ctx, LinearLayoutManager.HORIZONTAL, false)
-                adapter = ChannelItemAdapter(context, channel)
+                adapter = CourseOrSeriesItemAdapter(context, channel)
             }
         }
 

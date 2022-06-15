@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.paddy.mindvalley.channel.R
 import com.paddy.mindvalley.channel.data.model.ChannelListItem
 import com.paddy.mindvalley.channel.databinding.ChannelScreenFragmentBinding
-import com.paddy.mindvalley.channel.ui.adapter.ChannelPageMainAdapter
+import com.paddy.mindvalley.channel.ui.adapter.ChannelScreenSectionAdapter
 import com.paddy.mindvalley.channel.utils.gone
 import com.paddy.mindvalley.channel.utils.isListNotEmpty
 import com.paddy.mindvalley.channel.utils.isNotNullAndTrue
@@ -29,7 +29,7 @@ class ChannelScreenFragment : Fragment(R.layout.channel_screen_fragment) {
     private var mContext: Context? = null
     private val mChannelScreenViewModel: ChannelScreenViewModel by sharedViewModel<ChannelScreenViewModel>()
     private var mDataBinding :  ChannelScreenFragmentBinding ? = null
-    private var mChannelPageMainAdapter :  ChannelPageMainAdapter ? = null
+    private var mChannelScreenSectionAdapter :  ChannelScreenSectionAdapter ? = null
     private var mLinearLayoutManager:  LinearLayoutManager ? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -74,7 +74,7 @@ class ChannelScreenFragment : Fragment(R.layout.channel_screen_fragment) {
                         hideLoadingView(view)
                         if(isDataAvailable(result)) {
                             showContentView(view)
-                            mChannelPageMainAdapter?.addCollectionItems(result)
+                            mChannelScreenSectionAdapter?.addCollectionItems(result)
                         } else {
                             showEmptyView(view)
                         }
@@ -89,8 +89,8 @@ class ChannelScreenFragment : Fragment(R.layout.channel_screen_fragment) {
         mDataBinding?.rvChannelScreenMainList?.apply {
             mLinearLayoutManager = LinearLayoutManager(mContext)
             layoutManager = mLinearLayoutManager
-            mChannelPageMainAdapter = ChannelPageMainAdapter(mContext, mutableListOf())
-            adapter = mChannelPageMainAdapter
+            mChannelScreenSectionAdapter = ChannelScreenSectionAdapter(mContext, mutableListOf())
+            adapter = mChannelScreenSectionAdapter
         }
     }
 

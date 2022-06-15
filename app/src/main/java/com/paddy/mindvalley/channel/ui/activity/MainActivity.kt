@@ -1,19 +1,13 @@
 package com.paddy.mindvalley.channel.ui.activity
 
 import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
 import com.paddy.mindvalley.channel.R
 import com.paddy.mindvalley.channel.ui.fragment.ChannelScreenFragment
-import com.paddy.mindvalley.channel.ui.fragment.ChannelScreenViewModel
-import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {
-
-    private val mChannelScreenViewModel: ChannelScreenViewModel  by viewModel<ChannelScreenViewModel>()
     private var mContext: Context? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {

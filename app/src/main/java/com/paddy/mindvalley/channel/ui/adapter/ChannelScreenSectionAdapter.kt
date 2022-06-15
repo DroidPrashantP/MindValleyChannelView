@@ -6,21 +6,21 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.paddy.mindvalley.channel.data.model.ChannelListItem
 import com.paddy.mindvalley.channel.databinding.LayoutChannelSectionTypeItemBinding
-import com.paddy.mindvalley.channel.ui.ChannelPageTypeAdapterViewHolder
+import com.paddy.mindvalley.channel.ui.ChannelScreenSectionAdapterVH
 
-class ChannelPageMainAdapter(
+class ChannelScreenSectionAdapter(
     private var mContext: Context?,
     private var mCollection: MutableList<ChannelListItem>?
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        return ChannelPageTypeAdapterViewHolder(LayoutChannelSectionTypeItemBinding.inflate(inflater, parent, false))
+        return ChannelScreenSectionAdapterVH(LayoutChannelSectionTypeItemBinding.inflate(inflater, parent, false))
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val item = mCollection?.get(position)
-        (holder as ChannelPageTypeAdapterViewHolder).bindData(mContext, item)
+        (holder as ChannelScreenSectionAdapterVH).bindData(mContext, item)
     }
 
     override fun getItemCount(): Int {

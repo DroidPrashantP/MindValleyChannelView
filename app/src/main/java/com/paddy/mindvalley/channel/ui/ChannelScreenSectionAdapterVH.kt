@@ -5,13 +5,13 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.paddy.mindvalley.channel.data.model.ChannelListItem
-import com.paddy.mindvalley.channel.data.model.ChannelViewType
+import com.paddy.mindvalley.channel.data.model.ChannelSectionViewType
 import com.paddy.mindvalley.channel.databinding.LayoutChannelSectionTypeItemBinding
 import com.paddy.mindvalley.channel.ui.adapter.ChannelSubSectionAdapter
 import com.paddy.mindvalley.channel.utils.gone
 import com.paddy.mindvalley.channel.utils.show
 
-class ChannelPageTypeAdapterViewHolder(var binding: LayoutChannelSectionTypeItemBinding) : RecyclerView.ViewHolder(binding.root) {
+class ChannelScreenSectionAdapterVH(var binding: LayoutChannelSectionTypeItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
     fun bindData(context: Context?, channelListItem: ChannelListItem?) {
         channelListItem?.let {
@@ -23,15 +23,15 @@ class ChannelPageTypeAdapterViewHolder(var binding: LayoutChannelSectionTypeItem
             }
 
 
-            val llm = when (it.channelViewType) {
-                    ChannelViewType.NEW_EPISODE -> {
+            val llm = when (it.channelSectionViewType) {
+                    ChannelSectionViewType.NEW_EPISODE -> {
                         LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
                     }
-                    ChannelViewType.CHANNEL_SECTION -> {
+                    ChannelSectionViewType.CHANNEL_SECTION -> {
                         LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
 
                     }
-                    ChannelViewType.CATEGORY_SECTION -> {
+                    ChannelSectionViewType.CATEGORY_SECTION -> {
                         GridLayoutManager(context, 2, LinearLayoutManager.VERTICAL, false)
                     }
                 }

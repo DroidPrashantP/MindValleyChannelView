@@ -14,7 +14,7 @@ import com.paddy.mindvalley.channel.utils.LayoutUtils
 import com.paddy.mindvalley.channel.utils.isListNotEmpty
 import com.paddy.mindvalley.channel.utils.isNotNullAndTrue
 
-class ChannelItemAdapter(
+class CourseOrSeriesItemAdapter(
     private var mContext: Context?,
     private var mChannel: Channel?
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
